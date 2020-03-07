@@ -7,7 +7,7 @@ const fs = require("fs");
 
 const app = express();
 
-const Blog = require("./modules/Blog");
+const Blog = require("./models/Blog");
 
 var port = process.env.PORT || 3000;
 
