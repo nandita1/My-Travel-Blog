@@ -6,8 +6,26 @@ const methodOverride = require("method-override");
 const fs = require("fs");
 
 const app = express();
+const blogSchema = new mongoose.Schema({
+  image: {
+    type: String,
+    required: true
+  },
+  title: {
+    type: String,
+    required: true
+  },
+  story: {
+    type: String,
+    required: true
+  },
+  date: {
+    type: Date,
+    default: Date.now
+  }
+});
 
-const Blog = require("./models/Blog");
+const Blog = mongoose.model("Blog", blogSchema);
 
 var port = process.env.PORT || 3000;
 
